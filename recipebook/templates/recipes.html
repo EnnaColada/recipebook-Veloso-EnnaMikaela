@@ -8,7 +8,7 @@
     <h2>
         <ul>
             {% for recipe in object_list %}
-            <li><a href= "{{ 'recipe.get_absolute_urls' }}" >{{ recipe.name }}</a></li>
+            <li><a href= "{{ recipe.get_absolute_url }}" >{{ recipe.name }}</a></li>
             {% endfor %}
         </ul>
     </h2>
