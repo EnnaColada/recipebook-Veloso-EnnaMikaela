@@ -1,6 +1,6 @@
 from django.db import models
+from django.urls import reverse
 
-# Create your models here.
 class Ingredient(models.Model):
     name = models.CharField(max_length=50)
     
@@ -8,7 +8,7 @@ class Ingredient(models.Model):
         return self.name
     
     def get_absolute_url(self):
-        return reverse('ledger:ingredient_detail', args=[self.pk]) 
+        return reverse('ledger:ingredient-detail', args=[self.pk]) 
 
 
 class Recipe(models.Model):
@@ -18,7 +18,7 @@ class Recipe(models.Model):
         return self.name
     
     def get_absolute_url(self):
-        return reverse('ledger:recipe_detail', args=[self.pk])
+        return reverse('ledger:recipe-detail', args=[self.pk])
 
 
 class RecipeIngredient(models.Model):
